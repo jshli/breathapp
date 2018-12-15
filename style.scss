@@ -1,3 +1,4 @@
+$blue:#384661;
 
 
 h1 {
@@ -12,7 +13,7 @@ p, button {
 
 section {
     height: 100vh;
-    background-color:#384661;
+    background-color:$blue;
     display: flex !important;
     justify-content: center;
     color: white;
@@ -55,9 +56,8 @@ section {
     width: 4em;
     border-radius: 100px;
     border: 2px solid white;
-    background-color: #384661;
+    background-color: $blue;
     color:white;
-    transition: all ease-out 0.5s;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -66,7 +66,7 @@ section {
 
 #start-btn:hover {
     background-color: white;
-    color: #384661;
+    color: $blue;
 }
 
 
@@ -102,7 +102,7 @@ section {
 
 .circle-btn:hover {
     background-color: white;
-    color:#384661;
+    color:$blue;
 }
 
 .counter {
@@ -115,7 +115,6 @@ section {
     background-color: white;
     opacity: 0.6;
     border-radius: 100%;
-    transition: transform 2s ease-out 0s;
 }
 
 .circle-wrapper {
