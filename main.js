@@ -10,16 +10,12 @@ document.getElementById('counter').innerHTML = breaths;
 
 const increaseBreathes = () => {
     breaths ++;
-    console.log(breaths);
     document.getElementById('counter').innerHTML = breaths;
-    breathAnimation.loop = breaths;
 }
 
 const decreaseBreathes = () => {
     breaths --;
-    console.log(breaths);
     document.getElementById('counter').innerHTML = breaths;
-    breathAnimation.loop = breaths;
 }
 
 document.getElementById('decrease').addEventListener('click', decreaseBreathes);
@@ -34,12 +30,12 @@ const breathAnimation = anime.timeline({
         console.log(currentBreaths);
     },
     complete: function(anim) {
-        currentBreaths ++;
-        console.log(currentBreaths);
-        if (currentBreaths < breaths && currentBreaths !== breaths) {
-            return breathAnimation.restart()
+        if (currentBreaths < breaths) {
+            currentBreaths ++;
+            breathAnimation.restart()
         } else {
             currentBreaths = 1;
+            breathAnimation.reset()
         }
     }
 });
@@ -76,7 +72,6 @@ const startButton = document.getElementById('start-btn')
 startButton.onclick = breathAnimation.play;
 
 startButton.addEventListener('click', function() { 
-    console.log("click")
     breathAnimation.play(); 
 });
 
