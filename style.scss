@@ -5,10 +5,12 @@ h1 {
     font-family:'Montserrat', sans-serif;
     font-weight: bold;
     margin-bottom: 1em;
+    transition: all ease-out 0.8s;
 }
 
 p, button {
     font-family: 'Roboto', sans-serif;
+    transition: opacity ease-out 0.8s;
 }
 
 section {
@@ -47,14 +49,13 @@ section {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: background-color ease-out 0.3s;
+    transition: background-color ease-out 0.5s;
 }
 
 #start-btn {
     height: 4em;
     width: 4em;
     border-radius: 100px;
-    border: 2px solid white;
     background-color: white;
     color: $blue;
     position: absolute;
@@ -62,14 +63,14 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all ease-out 0.3s;
+    transition: all ease-out 0.5s;
     z-index: 2;
 
 }
 
 #start-btn:hover {
-    background-color: white;
-    color: $blue;
+    background-color: $blue;
+    color: white;
 }
 
 
