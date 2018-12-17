@@ -45,7 +45,7 @@ var morphing = anime({
         { value: 'M84,167 C110.124484,167 123.714197,155.055438 138.928653,136.188236 C150.410421,121.949879 160.081465,103.71515 160.081465,84 C160.081465,59.3539532 155.986355,39.3081795 138.928653,24.1067206 C124.260423,11.0347075 105.193587,1 84,1 C61.5631535,1 42.7515201,15.44588 27.8131304,29.9114763 C12.2316197,44.9998391 1,60.5972123 1,84 C1,109.816453 14.0738687,129.285202 32.5594753,144.508092 C46.8968692,156.314931 63.9768187,167 84,167 Z'}
       ],
     easing: 'linear',
-    duration: 10000,
+    duration: 12000,
     loop: true,
     autoplay: true,
     direction: 'alternate'
@@ -60,7 +60,6 @@ const startAnimation = anime({
     begin: function(anim){
         heading.textContent = "Just focus gently on the circle";
         document.querySelector('.selector-wrap').style.opacity = '0';
-        document.querySelector('.button-label').style.opacity = '0';
         document.querySelector('.subheading').style.opacity = '0';
     },
     complete: function(anim) {
@@ -86,9 +85,8 @@ const breathAnimation = anime.timeline({
             heading.style.opacity = "1.0"
             startButton.style.opacity = "1.0"
             isRunning = false;
-            heading.textContent = "Well Done";
+            heading.textContent = "Well done.";
             document.querySelector('.selector-wrap').style.opacity = '1.0';
-            document.querySelector('.button-label').style.opacity = '1.0';
             document.querySelector('.subheading').style.opacity = '1.0';
         }
     }
@@ -98,11 +96,11 @@ breathAnimation
 .add({
     targets: circle,
     opacity: 1,
-    scale: 3,
+    scale: 2.5,
     duration: 4000,
     easing: 'linear',
     begin: function() {
-        heading.textContent = "Now, breathe in";
+        heading.textContent = "Now, breathe in.";
         heading.style.opacity = "1.0"
       }
 },
@@ -111,11 +109,11 @@ breathAnimation
 .add({
     targets: circle,
     opacity: 1,
-    scale: 3,
+    scale: 2.5,
     duration: 7000,
     easing: 'linear',
     begin: function() {
-        heading.textContent = "Hold";
+        heading.textContent = "Hold.";
       }
 })
 .add({
@@ -125,7 +123,7 @@ breathAnimation
     duration: 8000,
     easing: 'linear',
     begin: function() {
-        heading.textContent = "Ok, breath out";
+        heading.textContent = "Ok, breath out.";
       }
 })
 .add({
@@ -139,7 +137,7 @@ breathAnimation
       }
 })
 
-
+//the start button
 const startButton = document.getElementById('start-btn')
 
 startButton.addEventListener('click', function() { 

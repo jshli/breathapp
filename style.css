@@ -1,5 +1,5 @@
 h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
   margin-bottom: 1em;
   transition: all ease-out 0.8s; }
@@ -41,7 +41,12 @@ section {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: background-color ease-out 0.5s; }
+  transition: background-color ease-out 0.5s, transform ease-out 0.5s; }
+
+.circle-btn:hover {
+  background-color: white;
+  color: #384661;
+  transform: scale(1.1); }
 
 #start-btn {
   height: 4em;
@@ -59,7 +64,8 @@ section {
 
 #start-btn:hover {
   background-color: #384661;
-  color: white; }
+  color: white;
+  transform: scale(1.1); }
 
 .btn-arrow, #btn-arrow--top, #btn-arrow--bottom {
   width: 2em;
@@ -84,10 +90,6 @@ section {
   width: 50%;
   height: 100%;
   transform: rotate(-45deg); }
-
-.circle-btn:hover {
-  background-color: white;
-  color: #384661; }
 
 .counter {
   margin: 0px; }
