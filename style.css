@@ -32,27 +32,29 @@ section {
 .circle-btn {
   height: 2em;
   width: 2em;
+  margin: 0 1em;
   border-radius: 100%;
   border: 2px solid white;
-  margin: 0px 1em;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: all ease-out 0.3s; }
+  transition: background-color ease-out 0.3s; }
 
 #start-btn {
-  margin-top: 2em;
   height: 4em;
   width: 4em;
   border-radius: 100px;
   border: 2px solid white;
-  background-color: #384661;
-  color: white;
+  background-color: white;
+  color: #384661;
+  position: absolute;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  transition: all ease-out 0.3s;
+  z-index: 2; }
 
 #start-btn:hover {
   background-color: white;
@@ -62,7 +64,8 @@ section {
   width: 2em;
   border: 1px solid white;
   position: relative;
-  background-color: white; }
+  background-color: white;
+  transition: all ease-out 0.3s; }
 
 #btn-arrow--top {
   position: absolute;
@@ -89,11 +92,7 @@ section {
   margin: 0px; }
 
 .circle {
-  height: 1em;
-  width: 1em;
-  background-color: white;
-  opacity: 0.6;
-  border-radius: 100%; }
+  opacity: 0.6; }
 
 .circle-wrapper {
   height: 16em;
@@ -102,19 +101,6 @@ section {
   justify-content: center;
   align-items: center; }
 
-@keyframes breath {
-  0% {
-    transform: scale(0.4);
-    opacity: 0.6; }
-  21% {
-    transform: scale(1);
-    opacity: 1; }
-  57% {
-    transform: scale(1);
-    opacity: 1.0; }
-  100% {
-    transform: scale(0.4);
-    opacity: 0.6; } }
 .button-label {
   margin-top: 1em;
   font-style: italic; }
