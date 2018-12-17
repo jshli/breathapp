@@ -80,6 +80,9 @@ var arrowMouseOver = anime({
     borderColor: '#384661',
     autoplay: false,
     easing: 'easeOutCubic',
+    complete: function(anim) {
+        arrowMouseOver.reset();
+    }
 });
 
 var arrowMouseOut = anime({
@@ -91,6 +94,3 @@ var arrowMouseOut = anime({
 
 startButton.onmouseover = arrowMouseOver.play;
 startButton.onmouseout = arrowMouseOut.play;
-
-
-
