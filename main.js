@@ -64,6 +64,7 @@ const startAnimation = anime({
     },
     complete: function(anim) {
         breathAnimation.play()
+        startAnimation.reset();
     }
 })
 
@@ -99,6 +100,7 @@ breathAnimation
     scale: 2.5,
     duration: 4000,
     easing: 'linear',
+    elasticity: 100,
     begin: function() {
         heading.textContent = "Now, breathe in.";
         heading.style.opacity = "1.0"
