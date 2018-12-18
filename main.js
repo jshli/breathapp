@@ -189,8 +189,8 @@ day
 })
 .add({
     targets: '#morph',
-    fill: '#FFF',
-    offset: 0,
+    fill: blue,
+    offset: '+=200',
 })
 
 .add({
