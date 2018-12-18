@@ -158,42 +158,19 @@ let nightMode = true;
 const nightModeSwitch = document.getElementById('night-mode-switch');
 
 
+const initialState = () =>{
+    document.getElementById("day-mode").style.transform=('scale(0.0')
+}
 
-const night = anime.timeline({
-    autoplay: false,
-    loop: false,
-    begin: function(anim){
-        document.getElementById('morph').style.fill= "#FFF";
-        document.querySelector('#section').style.cssText = `color: #FFF; background-color:${blue}`;
-        nightMode = true;
-    },
-});
+initialState();
 
-night
-.add({
-    targets: '#day-mode',
-    scale: 0.0,
-    easing: 'easeInCubic',
-    duration: 500
-})
-
-.add({
-    targets: '#moon',
-    easing: 'easeOutCubic',
-    d: 'M 11 1.42 C 11 8.324 16.596 13.92 23.5 13.92 C 23.98 13.92 24.454 13.893 24.92 13.84 C 24.215 20.075 18.923 24.92 12.5 24.92 C 5.596 24.92 0 19.324 0 12.42 C 0 5.997 4.845 0.705 11.08 0 C 11.027 0.466 11 0.94 11 1.42 Z',
-    offset: 500,
-    duration: 500
-})
-
-night.play();
 
 const day = anime.timeline({
-    loop: false,
     autoplay: false,
     begin: function(anim){
-        document.getElementById('morph').style.fill= "#FFF";
-        document.querySelector('#section').style.cssText = `color: ${blue}; background-color:#CFC7BA`;
-        nightMode = false;
+        // document.getElementById('morph').style.fill= "#FFF";
+        // document.querySelector('#section').style.cssText = `color: ${blue}; background-color:#CFC7BA`;
+        //nightMode = false;
     },
 });
 
@@ -202,21 +179,66 @@ day
     targets: '#moon',
     easing: 'easeOutCubic',
     d: 'M 15 0 C 19.861 0 24.963 7.316 24.92 12.42 C 24.916 12.9 24.963 12.898 24.92 13.84 C 24.92 19.979 18.923 24.92 12.5 24.92 C 5.596 24.92 0 19.324 0 12.42 C 0 5.997 4.845 0.705 11.08 0 L 15 0 Z',
-    duration: 500
+    duration: 300
 })
+
 .add({
     targets: '#day-mode',
     easing: 'easeOutCubic',
     scale: 1.2,
     offset: '+=200',
-    duration: 500
+    duration: 300
+})
+.add({
+    targets: '#morph',
+    fill: '#FFF',
+    offset: 0,
 })
 
+.add({
+    targets: '#section',
+    color: blue,
+    backgroundColor: '#CFC7BA',
+    offest: 0,
+})
 
 nightModeSwitch.addEventListener('click', function() {
     if (nightMode) {
         day.restart();
+        nightMode = false;
+        console.log(nightMode);
     } else if (!nightMode) {
-        night.restart()
+        day.reverse()
+        nightMode = true;
+        console.log(nightMode);
     }
 });
+
+
+// const night = anime.timeline({
+    //     autoplay: false,
+    //     loop: false,
+    //     begin: function(anim){
+    //         document.getElementById('morph').style.fill= "#FFF";
+    //         document.querySelector('#section').style.cssText = `color: #FFF; background-color:${blue}`;
+    //         document.getElementById('morph').style.fill= "#FFF";
+    //         nightMode = true;
+    //     },
+    // });
+    
+    // night
+    // .add({
+    //     targets: '#day-mode',
+    //     scale: 0.0,
+    //     easing: 'easeInCubic',
+    //     duration: 500
+    // })
+    
+    // .add({
+    //     targets: '#moon',
+    //     easing: 'easeOutCubic',
+    //     d: 'M 11 1.42 C 11 8.324 16.596 13.92 23.5 13.92 C 23.98 13.92 24.454 13.893 24.92 13.84 C 24.215 20.075 18.923 24.92 12.5 24.92 C 5.596 24.92 0 19.324 0 12.42 C 0 5.997 4.845 0.705 11.08 0 C 11.027 0.466 11 0.94 11 1.42 Z',
+    //     offset: 500,
+    //     duration: 500
+    // })
+    // night.play();
