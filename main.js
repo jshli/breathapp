@@ -204,8 +204,8 @@ nightModeSwitch.addEventListener('click', function() {
     if (nightMode) {
         day.restart();
         nightMode = false;
-    } else {
-
+    } else { 
+        day.play();
         day.reverse();
         nightMode = true;
     }
