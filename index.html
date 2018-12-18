@@ -33,9 +33,30 @@
                 </svg>
             </div>
         </div>
-        <div class="night-mode-switch">
-                <i class="fas fa-sun" id = 'day-mode'></i>
-                <i class="fas fa-moon" id = 'night-mode'></i>
+        <div id = "night-mode-switch">
+            <!-- moon -->
+            <svg id= "night-mode" width="2em" height="2em" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path id = "moon" d = 'M 11 1.42 C 11 8.324 16.596 13.92 23.5 13.92 C 23.98 13.92 24.454 13.893 24.92 13.84 C 24.215 20.075 18.923 24.92 12.5 24.92 C 5.596 24.92 0 19.324 0 12.42 C 0 5.997 4.845 0.705 11.08 0 C 11.027 0.466 11 0.94 11 1.42 Z' id="Combined-Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+            </svg>
+             
+            <!-- sun -->
+            <svg id = "day-mode" width="2.2em" height="2.2em" viewBox="0 0 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g fill="#FFFFFF" fill-rule="nonzero">
+                        <!-- <path d="M21.5,32 C24.3762721,32 26.9824287,30.8434979 28.8788261,28.9701373 C30.8058462,27.066526 32,24.4227178 32,21.5 C32,18.6235846 30.8433827,16.0173117 28.9698574,14.1208905 C27.0662668,12.1940367 24.4225745,11 21.5,11 C18.0215017,11 14.9380726,12.6914925 13.0273666,15.2968238 C11.7527426,17.0348293 11,19.1795084 11,21.5 C11,24.0974041 11.9431169,26.4745314 13.505586,28.3076173 C15.4315008,30.567097 18.2984142,32 21.5,32 Z" id="Oval"></path> -->
+                        <circle class ="sunbeams" cx="21.5" cy="3.5" r="3.5"></circle>
+                        <circle class ="sunbeams" cx="39.5" cy="21.5" r="3.5"></circle>
+                        <circle class ="sunbeams" cx="3.5" cy="21.5" r="3.5"></circle>
+                        <circle class ="sunbeams" cx="8.5" cy="8.5" r="3.5"></circle>
+                        <circle class ="sunbeams" cx="34.5" cy="8.5" r="3.5"></circle>
+                        <circle class ="sunbeams" cx="35.5" cy="34.5" r="3.5"></circle>
+                        <circle class ="sunbeams" cx="8.5" cy="34.5" r="3.5"></circle>
+                        <circle class ="sunbeams" cx="21.5" cy="39.5" r="3.5"></circle>
+                    </g>
+                </g>
+            </svg>
         </div>
     </section>
     <script src="main.js"></script>

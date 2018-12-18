@@ -14,12 +14,12 @@ document.getElementById('counter').innerHTML = breaths;
 const increaseBreathes = () => {
     breaths ++;
     document.getElementById('counter').innerHTML = breaths;
-}
+};
 
 const decreaseBreathes = () => {
     breaths --;
     document.getElementById('counter').innerHTML = breaths;
-}
+};
 
 //hide decrement button if breaths just one
 const hideDecrementer = () => {
@@ -28,7 +28,7 @@ const hideDecrementer = () => {
     } else if (breaths > 1){
         document.getElementById('decrease').style.visibility = "visible";
     }
-}
+};
 
 
 
@@ -71,14 +71,14 @@ const startAnimation = anime({
         document.querySelector('.subheading').style.opacity = '0';
     },
     complete: function(anim) {
-        breathAnimation.play()
+        breathAnimation.play();
         startAnimation.reset();
     }
 })
 
 const breathAnimation = anime.timeline({
     autoplay: false,
-    begin: function(anim){
+    begin: function(anim) {
         console.log(currentBreaths);
         isRunning = true;    
 
@@ -86,7 +86,7 @@ const breathAnimation = anime.timeline({
     complete: function(anim) {
         if (currentBreaths < breaths) {
             currentBreaths ++;
-            breathAnimation.restart()
+            breathAnimation.restart();
         } else {
             currentBreaths = 1;
             breathAnimation.reset();
@@ -143,38 +143,80 @@ breathAnimation
     begin: function() {
         heading.style.opacity = "0"
       }
-})
+});
 
 //the start button
-const startButton = document.getElementById('start-btn')
+const startButton = document.getElementById('start-btn');
 
 startButton.addEventListener('click', function() { 
-    startButton.style.opacity="0";
+    startButton.style.opacity = "0";
     startAnimation.play();
 });
 
 // night mode/day mode
 let nightMode = true;
-const nightSwitch = document.getElementById('night-mode');
-const daySwitch = document.getElementById('day-mode');
-//const section = document.getElementsByTagName('section');
+const nightModeSwitch = document.getElementById('night-mode-switch');
 
-daySwitch.addEventListener('click', function() {
-    if (nightMode == true) {
-        document.getElementById('morph').style.fill= blue;
-        document.querySelector('#section').style.cssText = 'color: #3E4D5E;background-color:#CFC7BA'
-        this.style.transform = 'scale(1.1,1.1)';
-        nightSwitch.style.transform = 'scale(0.5, 0.5)';
-        nightMode = false;
-    }
-})
 
-nightSwitch.addEventListener('click', function() {
-    if (nightMode == false) {
-        document.getElementById('morph').style.fill= '#FFF';
-        document.querySelector('#section').style.cssText = 'color: white; background-color:#3E4D5E'
-        this.style.transform = 'scale(1.1,1.1)';
-        daySwitch.style.transform = 'scale(0.5, 0.5)';
+
+const night = anime.timeline({
+    autoplay: false,
+    loop: false,
+    begin: function(anim){
+        document.getElementById('morph').style.fill= "#FFF";
+        document.querySelector('#section').style.cssText = `color: #FFF; background-color:${blue}`;
         nightMode = true;
-    }
+    },
+});
+
+night
+.add({
+    targets: '#day-mode',
+    scale: 0.0,
+    easing: 'easeInCubic',
+    duration: 500
 })
+
+.add({
+    targets: '#moon',
+    easing: 'easeOutCubic',
+    d: 'M 11 1.42 C 11 8.324 16.596 13.92 23.5 13.92 C 23.98 13.92 24.454 13.893 24.92 13.84 C 24.215 20.075 18.923 24.92 12.5 24.92 C 5.596 24.92 0 19.324 0 12.42 C 0 5.997 4.845 0.705 11.08 0 C 11.027 0.466 11 0.94 11 1.42 Z',
+    offset: 500,
+    duration: 500
+})
+
+night.play();
+
+const day = anime.timeline({
+    loop: false,
+    autoplay: false,
+    begin: function(anim){
+        document.getElementById('morph').style.fill= "#FFF";
+        document.querySelector('#section').style.cssText = `color: ${blue}; background-color:#CFC7BA`;
+        nightMode = false;
+    },
+});
+
+day
+.add ({
+    targets: '#moon',
+    easing: 'easeOutCubic',
+    d: 'M 15 0 C 19.861 0 24.963 7.316 24.92 12.42 C 24.916 12.9 24.963 12.898 24.92 13.84 C 24.92 19.979 18.923 24.92 12.5 24.92 C 5.596 24.92 0 19.324 0 12.42 C 0 5.997 4.845 0.705 11.08 0 L 15 0 Z',
+    duration: 500
+})
+.add({
+    targets: '#day-mode',
+    easing: 'easeOutCubic',
+    scale: 1.2,
+    offset: '+=200',
+    duration: 500
+})
+
+
+nightModeSwitch.addEventListener('click', function() {
+    if (nightMode) {
+        day.restart();
+    } else if (!nightMode) {
+        night.restart()
+    }
+});
