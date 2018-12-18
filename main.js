@@ -166,11 +166,9 @@ initialState();
 
 
 const day = anime.timeline({
+
     autoplay: false,
     begin: function(anim){
-        // document.getElementById('morph').style.fill= "#FFF";
-        // document.querySelector('#section').style.cssText = `color: ${blue}; background-color:#CFC7BA`;
-        //nightMode = false;
     },
 });
 
@@ -206,39 +204,8 @@ nightModeSwitch.addEventListener('click', function() {
     if (nightMode) {
         day.restart();
         nightMode = false;
-        console.log(nightMode);
     } else if (!nightMode) {
         day.reverse()
         nightMode = true;
-        console.log(nightMode);
     }
 });
-
-
-// const night = anime.timeline({
-    //     autoplay: false,
-    //     loop: false,
-    //     begin: function(anim){
-    //         document.getElementById('morph').style.fill= "#FFF";
-    //         document.querySelector('#section').style.cssText = `color: #FFF; background-color:${blue}`;
-    //         document.getElementById('morph').style.fill= "#FFF";
-    //         nightMode = true;
-    //     },
-    // });
-    
-    // night
-    // .add({
-    //     targets: '#day-mode',
-    //     scale: 0.0,
-    //     easing: 'easeInCubic',
-    //     duration: 500
-    // })
-    
-    // .add({
-    //     targets: '#moon',
-    //     easing: 'easeOutCubic',
-    //     d: 'M 11 1.42 C 11 8.324 16.596 13.92 23.5 13.92 C 23.98 13.92 24.454 13.893 24.92 13.84 C 24.215 20.075 18.923 24.92 12.5 24.92 C 5.596 24.92 0 19.324 0 12.42 C 0 5.997 4.845 0.705 11.08 0 C 11.027 0.466 11 0.94 11 1.42 Z',
-    //     offset: 500,
-    //     duration: 500
-    // })
-    // night.play();
