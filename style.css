@@ -10,13 +10,14 @@ p, button {
 
 section {
   height: 100vh;
-  background-color: #384661;
+  background-color: #3E4D5E;
   display: flex !important;
   justify-content: center;
   color: white;
   text-align: center;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  transform: all ease-out 0.5s; }
 
 .selector-wrap {
   display: flex;
@@ -31,71 +32,42 @@ section {
   justify-content: center;
   align-items: center; }
 
-.circle-btn {
-  height: 2em;
-  width: 2em;
-  margin: 0 1em;
+.circle-btn, #start-btn {
   border-radius: 100%;
   border: 2px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  transition: background-color ease-out 0.5s, transform ease-out 0.5s; }
+  cursor: pointer; }
 
-.circle-btn:hover {
+.circle-btn:hover, #start-btn:hover {
   background-color: white;
-  color: #384661;
+  color: #3E4D5E;
   transform: scale(1.1); }
+
+.circle-btn {
+  height: 2em;
+  width: 2em;
+  margin: 0 1em;
+  transition: background-color ease-out 0.5s, transform ease-out 0.5s; }
 
 #start-btn {
   height: 4em;
   width: 4em;
-  border-radius: 100px;
   background-color: white;
-  color: #384661;
+  color: #3E4D5E;
   position: absolute;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: all ease-out 0.5s;
   z-index: 2; }
-
-#start-btn:hover {
-  background-color: #384661;
-  color: white;
-  transform: scale(1.1); }
-
-.btn-arrow, #btn-arrow--top, #btn-arrow--bottom {
-  width: 2em;
-  border: 1px solid white;
-  position: relative;
-  background-color: white;
-  transition: all ease-out 0.3s; }
-
-#btn-arrow--top {
-  position: absolute;
-  right: -4px;
-  top: -6px;
-  width: 50%;
-  height: 100%;
-  transform: rotate(45deg);
-  background-color: white; }
-
-#btn-arrow--bottom {
-  position: absolute;
-  right: -4px;
-  top: 4px;
-  width: 50%;
-  height: 100%;
-  transform: rotate(-45deg); }
 
 .counter {
   margin: 0px; }
 
 .circle {
   opacity: 0.6; }
+
+#morph {
+  transition: all ease-out 0.5s; }
 
 .circle-wrapper {
   height: 16em;
@@ -107,5 +79,22 @@ section {
 .button-label {
   margin-top: 1em;
   font-style: italic; }
+
+.night-mode-switch {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  padding: 0 5em 3em 0;
+  display: flex;
+  justify-content: flex-end; }
+
+#day-mode, #night-mode {
+  padding: 0.5em;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: all ease-out 0.5s; }
+
+#day-mode:hover, #night-mode:hover {
+  transform: scale(1.1); }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,4 @@
-$blue:#384661;
+$blue:#3E4D5E;
 
 
 h1 {
@@ -22,6 +22,7 @@ section {
     text-align: center;
     flex-direction: column;
     align-items: center;
+    transform: all ease-out 0.5s;
 }
 .selector-wrap{
     display: flex;
@@ -39,78 +40,48 @@ section {
 
 }
 
-.circle-btn {
-    height: 2em;
-    width: 2em;
-    margin: 0 1em;
+%circular-btn {
     border-radius: 100%;
     border: 2px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: background-color ease-out 0.5s, transform ease-out 0.5s;
 }
 
-.circle-btn:hover {
+%circular-btn:hover {
     background-color: white;
     color:$blue;
     transform: scale(1.1);
 }
 
+.circle-btn {
+    @extend %circular-btn;
+    height: 2em;
+    width: 2em;
+    margin: 0 1em;
+    transition: background-color ease-out 0.5s, transform ease-out 0.5s;
+}
+
+.circle-btn:hover {
+    @extend %circular-btn:hover;
+}
+
 #start-btn {
+    @extend %circular-btn;
     height: 4em;
     width: 4em;
-    border-radius: 100px;
     background-color: white;
     color: $blue;
     position: absolute;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: all ease-out 0.5s;
     z-index: 2;
 
 }
 
 #start-btn:hover {
-    background-color: $blue;
-    color: white;
-    transform: scale(1.1)
+    @extend %circular-btn:hover;
 }
-
-
-.btn-arrow {
-    width: 2em;
-    border: 1px solid white;
-    position: relative;
-    background-color:white;
-    transition: all ease-out 0.3s;
-}
-
-#btn-arrow--top{
-    @extend .btn-arrow;
-    position: absolute;
-    right: -4px;
-    top: -6px;
-    width: 50%;
-    height: 100%;
-    transform: rotate(45deg);
-    background-color:white;
-}
-
-#btn-arrow--bottom{
-    @extend .btn-arrow;
-    position: absolute;
-    right: -4px;
-    top: 4px;
-    width: 50%;
-    height: 100%;
-    transform: rotate(-45deg);
-}
-
-
 
 
 .counter {
@@ -119,6 +90,10 @@ section {
 
 .circle {
     opacity: 0.6;
+}
+
+#morph {
+    transition: all ease-out 0.5s;
 }
 
 .circle-wrapper {
@@ -133,4 +108,24 @@ section {
 .button-label {
     margin-top: 1em;
     font-style: italic;
+}
+
+.night-mode-switch {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding: 0 5em 3em 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#day-mode, #night-mode {
+    padding: 0.5em;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all ease-out 0.5s;
+}
+
+#day-mode:hover, #night-mode:hover {
+    transform: scale(1.1);
 }
