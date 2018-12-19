@@ -175,29 +175,34 @@ const day = anime.timeline({
 day
 .add ({
     targets: '#moon',
-    easing: 'easeOutCubic',
+    easing: 'easeInCubic',
     d: 'M 15 0 C 19.861 0 24.963 7.316 24.92 12.42 C 24.916 12.9 24.963 12.898 24.92 13.84 C 24.92 19.979 18.923 24.92 12.5 24.92 C 5.596 24.92 0 19.324 0 12.42 C 0 5.997 4.845 0.705 11.08 0 L 15 0 Z',
-    duration: 300
+    duration: 200
 })
 
 .add({
     targets: '#day-mode',
-    easing: 'easeOutCubic',
+    easing: 'easeInCubic',
     scale: 1.2,
-    offset: '+=200',
-    duration: 300
+    duration: 200,
+    offset: "+=200",
+    elasticity: 200
 })
 .add({
     targets: '#morph',
     fill: blue,
-    offset: '+=200',
+    offset: "+=200",
+    easing: 'easeInCubic',
+    duration: 200
 })
 
 .add({
     targets: '#section',
     color: blue,
     backgroundColor: '#CFC7BA',
-    offest: 0,
+    offset: 0,
+    easing: 'easeInCubic',
+    duration: 200
 })
 
 nightModeSwitch.addEventListener('click', function() {
